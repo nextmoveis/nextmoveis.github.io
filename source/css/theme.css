@@ -680,7 +680,7 @@ section .login-overlay {
   cursor: url(../img/grabbing.png) 8 8, move;
 }
 /*
-*   Owl Carousel Owl Demo Theme 
+*   Owl Carousel Owl Demo Theme
 * v1.3.2
 */
 .owl-theme-main .owl-controls .owl-page.active span,
@@ -1195,8 +1195,8 @@ section .login-overlay {
   right: 0;
   bottom: 0;
   top: 0;
-  max-width: 80%;
-  max-height: 25%;
+  max-width: 90%;
+  max-height: 35%;
   z-index: 10;
   margin: auto;
   text-align: center;
