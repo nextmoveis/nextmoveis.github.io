@@ -29,7 +29,7 @@ function init() {
 function owlCarousel() {
     $("#owl-example").owlCarousel({
       lazyLoad : true,
-      items: 4,
+      items: 3,
       theme: "owl-theme-main"
     });
 
