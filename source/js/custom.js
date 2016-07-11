@@ -167,23 +167,23 @@ function magnificPopup() {
 
 function isotope() {
 
- var $container = $('#portfolio');
+  var $container = $('#portfolio');
 
- // init
- $container.imagesLoaded( function(){
-   $container.isotope({
-     // options
-     itemSelector: '.portfolio-item',
-     layoutMode: 'fitRows'
-   });
- });
+  // init
+  $container.imagesLoaded( function(){
+    $container.isotope({
+      // options
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
+    });
+  });
 
- // filter items on button click
- $('#filters').on( 'click', 'button', function( event ) {
-   var filterValue = $(this).attr('data-filter-value');
-   $container.isotope({ filter: filterValue });
-   $('#filters button').removeClass('active');
-   $(this).addClass('active');
+  // filter items on button click
+  $('#filters').on( 'click', 'button', function( event ) {
+    var filterValue = $(this).attr('data-filter-value');
+    $container.isotope({ filter: filterValue });
+    $('#filters button').removeClass('active');
+    $(this).addClass('active');
  });
 
 }
@@ -253,12 +253,12 @@ function signupOverlay() {
   }
 
   for (i = 0; i < triggerBttn.length; i++) {
-      triggerBttn[i].addEventListener( 'click', toggleOverlay );
+    triggerBttn[i].addEventListener( 'click', toggleOverlay );
   }
   closeBttn.addEventListener( 'click', toggleOverlay );
 
   $('.signup').click(function(e) {
-      e.preventDefault();
+    e.preventDefault();
   });
 }
 
@@ -266,18 +266,18 @@ function signupOverlay() {
 
 function loginOverlay() {
   var container = document.querySelector( 'div.container' ),
-    triggerBttn = document.querySelector( '.login' ),
-    overlay = document.querySelector( 'div#login' ),
-    closeBttn = overlay.querySelector( 'button.overlay-close' );
-    transEndEventNames = {
-      'WebkitTransition': 'webkitTransitionEnd',
-      'MozTransition': 'transitionend',
-      'OTransition': 'oTransitionEnd',
-      'msTransition': 'MSTransitionEnd',
-      'transition': 'transitionend'
-    },
-    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-    support = { transitions : Modernizr.csstransitions };
+  triggerBttn = document.querySelector( '.login' ),
+  overlay = document.querySelector( 'div#login' ),
+  closeBttn = overlay.querySelector( 'button.overlay-close' );
+  transEndEventNames = {
+    'WebkitTransition': 'webkitTransitionEnd',
+    'MozTransition': 'transitionend',
+    'OTransition': 'oTransitionEnd',
+    'msTransition': 'MSTransitionEnd',
+    'transition': 'transitionend'
+  },
+  transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+  support = { transitions : Modernizr.csstransitions };
 
   function toggleOverlay() {
     if( classie.has( overlay, 'open' ) ) {
@@ -308,7 +308,7 @@ function loginOverlay() {
   closeBttn.addEventListener( 'click', toggleOverlay );
 
   $('.login').click(function(e) {
-      e.preventDefault();
+    e.preventDefault();
   });
 }
 
@@ -318,22 +318,22 @@ function loginOverlay() {
 
 function onePageScroll() {
   $('.nav').onePageNav({
-      currentClass: 'current',
-      changeHash: false,
-      scrollSpeed: 650,
-      scrollOffset: 30,
-      scrollThreshold: 0.5,
-      filter: ':not(.login, .signup, .external)',
-      easing: 'swing',
-      begin: function() {
-          //I get fired when the animation is starting
-      },
-      end: function() {
-          //I get fired when the animation is ending
-      },
-      scrollChange: function($currentListItem) {
-          //I get fired when you enter a section and I pass the list item of the section
-      }
+    currentClass: 'current',
+    changeHash: false,
+    scrollSpeed: 650,
+    scrollOffset: 30,
+    scrollThreshold: 0.5,
+    filter: ':not(.login, .signup, .external)',
+    easing: 'swing',
+    begin: function() {
+        //I get fired when the animation is starting
+    },
+    end: function() {
+        //I get fired when the animation is ending
+    },
+    scrollChange: function($currentListItem) {
+        //I get fired when you enter a section and I pass the list item of the section
+    }
   });
 }
 
@@ -342,7 +342,7 @@ $(window).scroll(function() {
   var windowpos = $(window).scrollTop() ;
 
   if (windowpos <= 500) {
-      $('.nav li.current').removeClass('current');
+    $('.nav li.current').removeClass('current');
   }
 });
 
@@ -445,5 +445,5 @@ $(function() {
 
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
-     $('#success').html('');
-  });
+  $('#success').html('');
+});
