@@ -74,7 +74,13 @@ function toggleContactForm() {
 
 window.scrollReveal = new scrollReveal();
 
+/* --- modals------------------- */
+// neccesary to clear active classes on isotope gallery when modals close
 
+$('.modal').on('hide.bs.modal', function() {
+  $('.portfolio-item figure figcaption').removeClass('active');
+  $('.portfolio-item figure .info').removeClass('active');
+})
 
 /* --- magnific popup ------------------- */
 
@@ -145,8 +151,14 @@ function magnificPopup() {
 
 		midClick: true,
 		removalDelay: 300,
-		mainClass: 'my-mfp-slide-bottom'
+		mainClass: 'my-mfp-slide-bottom',
+    modal: true
 	});
+
+  $(document).on('click', '.popup-modal-dismiss', function (e) {
+    e.preventDefault();
+    $.magnificPopup.close();
+  });
 }
 
 
