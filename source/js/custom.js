@@ -292,16 +292,24 @@ $(function() {
        // get values from FORM
       var first_name = $("input#first_name").val();
       var last_name = $("input#last_name").val();
+      var name = first_name + " " + last_name;
       var email = $("input#email").val();
+      var phone = $("input#phone").val();
+      var organization = $("input#organization").val();
       var message = $("textarea#message").val();
 
-      console.log("success")
+      console.log(first_name)
+      console.log($("input#first_name").val())
+      console.log($form)
+
     	$.ajax({
-        url: "contact_me.php",
+        url: "mailer.php",
         type: "POST",
-        data: {first_name: first_name, last_name: last_name, email: email, message: message},
+        data: $form.serialize(),
         cache: false,
         success: function() {
+          console.log("success send")
+
                 	// Success message
           $('#success').html("<div class='alert alert-success'>");
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -315,6 +323,7 @@ $(function() {
      	  },
      	  error: function() {
      		// Fail message
+          console.log("failed send")
      		  $('#success').html("<div class='alert alert-danger'>");
           $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
           	.append( "</button>");
