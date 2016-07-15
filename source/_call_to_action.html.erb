@@ -11,14 +11,18 @@
         <div class='contact-form'>
           <form name="sentMessage" id="contactForm" action="contact_me.php">
             <div class='name'>
-              <input class='form-control first' placeholder='First Name' type='text' id="first_name" autofocus required data-validation-required-message="Please enter your first name">
-              <input class='last' placeholder='Last Name' type='text' id="last_name" required data-validation-required-message="Please enter your last name">
+              <input class='form-control first' placeholder='*First Name' type='text' id="first_name" autofocus required data-validation-required-message="Please enter your first name">
+              <input class='last' placeholder='*Last Name' type='text' id="last_name" required data-validation-required-message="Please enter your last name">
             </div>
             <div class='contact'>
-              <input class='form-control email' placeholder='E-mail Address' type='text' id="email" required data-validation-required-message="Please enter your email">
+              <input class='form-control first' placeholder='*Email Address' type='text' id="email" required data-validation-required-message="Please enter your email">
+              <input class='last' placeholder='Phone Number' type='text' id="number" >
+            </div>
+            <div class="org">
+              <input class='organization' placeholder='Organization' type='text' id="organization">
             </div>
             <div class='message'>
-              <textarea class="form-control" placeholder='Your message' id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              <textarea class="form-control" placeholder='*Your message' id="message" required data-validation-required-message="Please enter your message" maxlength="9999" style="resize: vertical"></textarea>
             </div>
             <div id="success"> </div> <!-- For success/fail messages -->
             <footer class="submit-button">

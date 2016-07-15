@@ -1970,7 +1970,7 @@ section .overlay-text {
   margin: 0;
   border: 0;
   clear: both;
-  overflow: hidden;
+  overflow: overlay;
 }
 .contact-form header {
   height: 75px;
@@ -2000,6 +2000,7 @@ section .overlay-text {
   border-left: 0;
   border-radius: 0 4px 0 0;
 }
+.contact-form .organization,
 .contact-form .email {
   height: 50px;
   width: 100%;
