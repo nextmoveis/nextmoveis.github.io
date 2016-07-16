@@ -17,7 +17,7 @@
         }
 
         // Set the recipient email address.
-        $recipient = "haiz@nextmove.is";
+        $recipient = "haizop@gmail.com";
 
         // Set the email subject.
         $subject = "new NextMove contact from $name";
