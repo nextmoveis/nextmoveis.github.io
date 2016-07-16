@@ -276,72 +276,44 @@ $(function() {
 	});
 
 
+// contact form
 
-/*
-  Jquery Validation using jqBootstrapValidation
-   example is taken from jqBootstrapValidation docs
-  */
 $(function() {
-  $("input,textarea").jqBootstrapValidation({
-    preventSubmit: true,
-    submitError: function($form, event, errors) {
-      console.log("failed");
-    },
-    submitSuccess: function($form, event) {
-      event.preventDefault(); // prevent default submit behaviour
-       // get values from FORM
-      var first_name = $("input#first_name").val();
-      var last_name = $("input#last_name").val();
-      var name = first_name + " " + last_name;
-      var email = $("input#email").val();
-      var phone = $("input#phone").val();
-      var organization = $("input#organization").val();
-      var message = $("textarea#message").val();
+  var form = $('#contact-form');
 
-      console.log(first_name)
-      console.log($("input#first_name").val())
-      console.log($form)
+  $(form).submit(function(event) {
+    event.preventDefault();
+    var formData = $(form).serialize();
 
-    	$.ajax({
-        url: "mailer.php",
-        type: "POST",
-        data: $form.serialize(),
-        cache: false,
-        success: function() {
-          console.log("success send")
-
-                	// Success message
-          $('#success').html("<div class='alert alert-success'>");
-          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            .append( "</button>");
-          $('#success > .alert-success')
-            .append("<strong>Your message has been sent. </strong>");
-     		  $('#success > .alert-success')
-     			  .append('</div>');
-     		    //clear all fields
-     		  $('#contactForm').trigger("reset");
-     	  },
-     	  error: function() {
-     		// Fail message
-          console.log("failed send")
-     		  $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-          	.append( "</button>");
-          $('#success > .alert-danger').append("<strong>Sorry "+firstName+" it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='mailto:me@example.com?Subject=Message_Me;>me@example.com</a> ? Sorry for the inconvenience!");
-     	    $('#success > .alert-danger').append('</div>');
-     		//clear all fields
-     	    $('#contactForm').trigger("reset");
-     	  },
-      })
-    },
-    filter: function() {
-      return $(this).is(":visible");
-    },
-  });
-
-  $("a[data-toggle=\"tab\"]").click(function(e) {
-    e.preventDefault();
-    $(this).tab("show");
+    $.ajax({
+      type: 'POST',
+      url: 'mailer.php',
+      data: formData,
+    })
+    .done(function(response) {
+      // Success message
+      console.log(response)
+      $('#success').html("<div class='alert alert-success'>");
+      $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+        .append( "</button>");
+      $('#success > .alert-success')
+        .append("<strong>Your message has been sent. </strong>");
+      $('#success > .alert-success')
+        .append('</div>');
+      //clear all fields
+      $('#contact-form').trigger("reset");
+    })
+    .error(function(data) {
+      // Fail message
+      console.log(data.responseText)
+      $('#success').html("<div class='alert alert-danger'>");
+      $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+        .append( "</button>");
+      $('#success > .alert-danger').append("<strong>Sorry "+firstName+" it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='mailto:me@example.com?Subject=Message_Me;>me@example.com</a> ? Sorry for the inconvenience!");
+      $('#success > .alert-danger').append('</div>');
+      //clear all fields
+      $('#contact-form').trigger("reset");
+    });
   });
 });
 

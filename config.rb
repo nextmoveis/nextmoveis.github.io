@@ -40,6 +40,7 @@ set :layout, false
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  activate :php
 end
 
 # Methods defined in the helpers block are available in templates
