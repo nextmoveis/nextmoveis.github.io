@@ -2020,7 +2020,7 @@ section .overlay-text {
   border-radius: 4px;
   border: 0;
   color: white;
-  padding: 1.3em 2em;
+  padding: 1.3em 2em !important;
   margin-top: 1em;
   transition: all linear .2s;
 }

@@ -278,11 +278,16 @@ $(function() {
 
 // contact form
 
-$(function() {
-  var form = $('#contact-form');
-
-  $(form).submit(function(event) {
+$('#contact-form').validator().on('submit', function (event) {
+  if (event.isDefaultPrevented()) {
+    $('#success').html("<div class='alert alert-danger'>");
+    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+      .append( "</button>");
+    $('#success > .alert-danger').append("<strong>Sorry it seems that there is a problem.</strong><br>Please check your entries and try again.");
+    $('#success > .alert-danger').append('</div>');
+  } else {
     event.preventDefault();
+    var form = $('#contact-form');
     var formData = $(form).serialize();
 
     $.ajax({
@@ -310,14 +315,16 @@ $(function() {
       $('#success').html("<div class='alert alert-danger'>");
       $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
         .append( "</button>");
-      $('#success > .alert-danger').append("<strong>Sorry it seems that our mail server is not responding...</strong> Could you please email us directly at <a href='mailto:connect@nextmove.is?Subject=Message_Me'>connect@nextmove.is</a>");
+      $('#success > .alert-danger').append("<strong>Sorry, it seems that there is a problem with our email server.</strong><br>Please email us directly at <a href='mailto:connect@nextmove.is?Subject=Message_Me'>connect@nextmove.is</a>.");
       $('#success > .alert-danger').append('</div>');
-      //clear all fields
-      $('#contact-form').trigger("reset");
     });
-  });
-});
 
+    $("a[data-toggle=\"tab\"]").click(function(e) {
+      e.preventDefault();
+      $(this).tab("show");
+    });
+  }
+})
 
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
