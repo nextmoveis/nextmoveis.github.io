@@ -11,18 +11,13 @@
         <div class='contact-form'>
           <form name="contact-form" id="contact-form" method="post" role="form" data-toggle="validator">
             <div class='name'>
-              <input class='form-control first' placeholder='*First Name' type='text' id="name" name="name" autofocus required data-error="Please enter your first name">
-              <input class='last' placeholder='*Last Name' id="last_name" name="last_name" required data-error="Please enter your last name">
+              <input class='form-control email' placeholder='Name' type='text' id="name" name="name" autofocus required data-error="Please enter your first name">
             </div>
             <div class='contact'>
-              <input class='form-control first' placeholder='*Email Address' type='text' id="email" name="email" required data-error="Please enter your email">
-              <input class='last' placeholder='Phone Number' type='tel' id="phone" name="phone">
-            </div>
-            <div class="org">
-              <input class='organization' placeholder='Organization' type='text' id="organization" name="organization">
+              <input class='form-control email' placeholder='Email Address' type='text' id="email" name="email" required data-error="Please enter your email">
             </div>
             <div class='message'>
-              <textarea class="form-control" placeholder='*Your message' id="message" name="message" required data-error="Please enter your message" style="resize: vertical"></textarea>
+              <textarea class="form-control" placeholder='Your message' id="message" name="message" required data-error="Please enter your message" style="resize: vertical"></textarea>
             </div>
             <div id="success"> </div> <!-- For success/fail messages -->
             <footer class="submit-button">
