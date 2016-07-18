@@ -287,13 +287,13 @@ $(function() {
 
     $.ajax({
       type: 'POST',
-      url: $(form).attr('action'),
+      url: 'https://formspree.io/haizop@gmail.com',
       data: formData,
       dataType: "json"
     })
     .done(function(response) {
       // Success message
-      console.log(response)
+      // console.log(response)
       $('#success').html("<div class='alert alert-success'>");
       $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
         .append( "</button>");
@@ -306,7 +306,7 @@ $(function() {
     })
     .error(function(data) {
       // Fail message
-      console.log(data.responseText)
+      // console.log(data.responseText)
       $('#success').html("<div class='alert alert-danger'>");
       $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
         .append( "</button>");
