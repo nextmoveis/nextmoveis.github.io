@@ -27,10 +27,15 @@ function init() {
 /* --- owlCarousel ------------- */
 
 function owlCarousel() {
-    $("#owl-example").owlCarousel({
+    $("#team-roster").owlCarousel({
       lazyLoad : true,
-      items: 4,
-      theme: "owl-theme-main"
+      items: 3,
+      theme: "owl-theme-main",
+      itemsCustom: [
+        [479,1],
+        [768,3],
+        [880,3]
+      ]
     });
 
     $("#intro").owlCarousel({
