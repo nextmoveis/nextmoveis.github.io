@@ -1726,13 +1726,41 @@ section .overlay-text {
   right: -100px;
 }
 #testimonials .carousel .carousel-indicators {
-  bottom: 0;
+  bottom: 0px;
 }
 #testimonials .carousel .carousel-indicators li,
 #testimonials .carousel .carousel-indicators .active {
   width: 15px;
   height: 15px;
   margin: 1px;
+}
+#testimonials .carousel .carousel-inner {
+  height: 350px;
+}
+@media (max-width: 1200px) {
+  #testimonials .carousel .carousel-inner {
+    height: 420px;
+  }
+}
+@media (max-width: 992px) {
+  #testimonials .carousel .carousel-inner {
+    height: 380px;
+  }
+}
+@media (max-width: 767px) {
+  #testimonials .carousel .carousel-inner {
+    height: 220px;
+  }
+}
+@media (max-width: 620px) {
+  #testimonials .carousel .carousel-inner {
+    height: 240px;
+  }
+}
+@media (max-width: 520px) {
+  #testimonials .carousel .carousel-inner {
+    height: 290px;
+  }
 }
 #testimonials .carousel blockquote {
   margin: 0;
