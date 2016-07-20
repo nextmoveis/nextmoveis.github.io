@@ -1847,6 +1847,12 @@ section .overlay-text {
   font-size: 1.5em;
   margin-bottom: 4px;
 }
+.grid figure .info h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #88b7b3;
+  margin-bottom: 4px;
+}
 .grid figure .info span {
   color: white;
 }
